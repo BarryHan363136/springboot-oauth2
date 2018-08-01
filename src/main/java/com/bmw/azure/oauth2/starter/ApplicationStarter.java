@@ -1,8 +1,9 @@
 package com.bmw.azure.oauth2.starter;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -15,7 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan(basePackages={"com.bmw.azure.oauth2"})
-@EnableCaching
+@MapperScan("com.bmw.azure.oauth2.mapper")
+@ServletComponentScan
 public class ApplicationStarter {
 
     public static void main(String[] args) {
